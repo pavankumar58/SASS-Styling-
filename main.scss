@@ -1,0 +1,298 @@
+@import 'singularitygs';
+@import 'vars/**/*';
+@import 'Breakpoint';
+// Import the dist file
+@import "juice";
+
+
+$primary-color: orange;
+
+h3 {
+    color:$primary-color;
+}
+
+p {
+    color: $primary-color;
+}
+
+$bg-color: rgba(#D063F7,5);
+$hover-color: green;
+$text-color: blue;
+
+$buttonBackground: white;
+$buttonColor: red;
+$buttonPadding:5px;
+nav{
+    
+    ul{
+        background: $bg-color;        // nesting
+        margin: 0;
+        padding:0;
+        list-style: none;
+        
+    }
+
+    li {
+        display: inline-block;
+        font-family: cursive;
+        
+        
+    }
+    
+    a{
+        color: $text-color;
+        display: inline-block;
+        padding: 10px 16px;
+        text-decoration: none;
+        
+        &:hover {
+            background:$hover-color;
+        }
+    }
+    
+    /*a:hover {
+        background:$hover-color;
+    }*/
+    
+}
+
+$icons:(basketball,overwatch,overwatch1,deadpool);
+@each $paper in $icons {                       //each property
+    .#{$paper} {
+        border: 3px solid red;
+    }
+}
+
+@import "another";
+
+ @mixin border-radius($radius){
+    -webkit-border-radius: $radius;          // mixins 
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+     border-radius: $radius;
+}
+
+//@mixin circle($width){
+//    width : $width;
+//    height : $width;
+//    -webkit-border-radius: $width/2;          // mixins 
+//    -moz-border-radius: $width/2;
+//    -ms-border-radius: $width/2;
+//     border-radius: $width/2;
+//}
+//
+//.circle { @include circle(100px);display: block; background: red;}
+//
+//.ir {
+//    font: 0/0 a;
+//    text-shadow: : 1px, bold
+//    color: transparent;
+//}
+
+.first-div {
+    
+    background: lightgreen;         // extenders
+    @include border-radius(50px);
+    margin: 10px;
+}
+
+.second-div {
+    @extend .first-div;               //inheretence (extends property)
+    @include border-radius(5px);
+    font-size: 12px;
+}
+
+.third-div {
+    @extend .first-div;
+    font-size: 20px;
+    @include border-radius(20px);
+    font: 10px;
+    box-sizing: border-box;
+}
+
+.button {
+    background: $buttonBackground;
+    border-radius: 10px;
+    color: $buttonColor;
+    display:inline-block;
+    padding: $buttonPadding;
+    text-decoration: none;
+    &:hover {
+        background: blue;
+    }
+}
+.jbutton {
+    @extend .button;
+    padding: $buttonPadding +40;
+    background: $primary-color * 5;
+}
+
+@each $p in (
+        one black,
+        two black + 20,            // another each representation
+        three orange,
+        four yellow,
+        five white
+    )  {
+        .#{nth($p,1)} {background: #{nth($p,2)}; }
+}
+
+.one {width: round(percentage(450px / 1440px)) ; float: left;clear: both;margin-left: 1px;}
+.two {width: round(percentage(890px / 1440px)); float: right;}    //buildin functions
+
+@function big-text($font-size,$val) {
+    @return ($font-size + $val);
+}
+
+//.five {font-size: big-text(100px,4px); }   //custom functions
+
+@function text-contrast($background) {
+    @if lightness($background) < 50% {
+        @return white;
+    } @else {
+        @return black;
+    }
+}
+
+//@for $i from 1 through 5 {
+//    .para-#{$i} {font-size: 5px * $i;}        // for loop
+//}
+
+$i:1 ;
+$parbg : red;
+@while $i <=5 {                                // while loop
+    .para-#{$i} {margin-left:100px *$i; background:$parbg; 
+                color: text-contrast($parbg);}
+    $parbg: lighten($parbg, 15%);
+    $i : $i +1;
+}
+
+  %bord {
+   font-family: cursive;          // placeholder selectors
+}
+
+.para-2 {
+    @extend %bord;
+}
+
+.left-bar, .content-div {
+    font-size: 20px;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    font-family: cursive;
+    border: 2px solid green;
+    
+}
+.fifth-div {
+    width: 1440px;
+    margin: 0 auto;
+   
+}
+
+
+.left-bar {
+    @include grid-span(4,1);
+}                                  //gridding contents using singularitygs
+
+.content-div {
+    @include grid-span(4,6);
+}
+.bar1 , .bar2 {
+    width: 100%;
+}
+
+//.bar1 {
+//    @include grid-span(1,1);
+//}
+//
+//.bar2 {
+//    @include grid-span(2,2);
+//}
+//.bar3 {
+//    @include grid-span(3,4);
+//}
+//.bar4 {
+//    @include grid-span(4,7);
+//}
+//.bar5 {
+//    @include grid-span(5,11);
+//}
+
+//@include breakpoint(680px) {
+//   .bar1 {
+//    @include grid-span(3,1);
+//}
+//
+//.bar2 {
+//    @include grid-span(3,4);
+//}
+//                                       //breakpoint
+//}
+//
+//@include breakpoint(420px) {
+//   .bar1 {
+//    @include grid-span(1,1);
+//}
+//
+//.bar2 {
+//    @include grid-span(1,2);
+//}
+// 
+//}
+//
+//@include breakpoint(935px) {
+//   .bar1 {
+//    @include grid-span(1,1);
+//}
+//
+//.bar2 {
+//    @include grid-span(1,2);
+//}
+// 
+//}
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

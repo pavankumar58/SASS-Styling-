@@ -1,0 +1,197 @@
+h3 {
+  color: orange;
+}
+
+p {
+  color: orange;
+}
+
+nav {
+  /*a:hover {
+      background:$hover-color;
+  }*/
+}
+nav ul {
+  background: #d063f7;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  font-family: cursive;
+}
+nav a {
+  color: blue;
+  display: inline-block;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+nav a:hover {
+  background: green;
+}
+
+.basketball {
+  border: 3px solid red;
+}
+
+.overwatch {
+  border: 3px solid red;
+}
+
+.overwatch1 {
+  border: 3px solid red;
+}
+
+.deadpool {
+  border: 3px solid red;
+}
+
+body {
+  text-align: center;
+  border: 1px solid green;
+}
+
+.first-div, .second-div, .third-div {
+  background: lightgreen;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+.second-div {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.third-div {
+  font-size: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  font: 10px;
+  box-sizing: border-box;
+}
+
+.button, .jbutton {
+  background: white;
+  border-radius: 10px;
+  color: red;
+  display: inline-block;
+  padding: 5px;
+  text-decoration: none;
+}
+.button:hover, .jbutton:hover {
+  background: blue;
+}
+
+.jbutton {
+  padding: 45px;
+  background: yellow;
+}
+
+.one {
+  background: black;
+}
+
+.two {
+  background: #141414;
+}
+
+.three {
+  background: orange;
+}
+
+.four {
+  background: yellow;
+}
+
+.five {
+  background: white;
+}
+
+.one {
+  width: 31%;
+  float: left;
+  clear: both;
+  margin-left: 1px;
+}
+
+.two {
+  width: 62%;
+  float: right;
+}
+
+.para-1 {
+  margin-left: 100px;
+  background: red;
+  color: black;
+}
+
+.para-2 {
+  margin-left: 200px;
+  background: #ff4d4d;
+  color: black;
+}
+
+.para-3 {
+  margin-left: 300px;
+  background: #ff9999;
+  color: black;
+}
+
+.para-4 {
+  margin-left: 400px;
+  background: #ffe6e6;
+  color: black;
+}
+
+.para-5 {
+  margin-left: 500px;
+  background: white;
+  color: black;
+}
+
+.para-2 {
+  font-family: cursive;
+}
+
+.left-bar, .content-div {
+  font-size: 20px;
+  text-align: left;
+  text-decoration: none;
+  color: black;
+  font-family: cursive;
+  border: 2px solid green;
+}
+
+.fifth-div {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.left-bar {
+  width: 32.20339%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0;
+  clear: none;
+}
+
+.content-div {
+  width: 32.20339%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 42.37288%;
+  clear: none;
+}
+
+.bar1, .bar2 {
+  width: 100%;
+}
